@@ -1,7 +1,9 @@
-export default function Preview() {
+import { marked } from 'marked'
+
+export default function Preview({ markdown }) {
   return (
-    <div id='preview'>
-      
+    <div id='preview' dangerouslySetInnerHTML={{ __html: marked(markdown)}}>
+
     </div>
   )
 }
