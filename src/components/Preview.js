@@ -1,5 +1,26 @@
 import { marked } from 'marked'
+import Prism from 'prismjs'
+import 'prismjs/themes/prism.css'
+import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-typescript'
+import 'prismjs/components/prism-csharp'
+import 'prismjs/components/prism-cshtml'
+import 'prismjs/components/prism-swift'
+import 'prismjs/components/prism-css'
+import 'prismjs/components/prism-scss'
+import 'prismjs/components/prism-python'
+
 import { FaFreeCodeCamp, FaExpand, FaDownLeftAndUpRightToCenter } from 'react-icons/fa6'
+
+const renderer = new marked.Renderer()
+
+renderer.code = (code, language) => {
+  const validLanguage = Prism.languages[language] ? language : 'javascript'
+  const highlighted = Prism.highlight(code, Prism.languages[validLanguage], validLanguage)
+  return `<pre class="language-${validLanguage}"><code class="language-${validLanguage}">${highlighted}</code></pre>`
+}
+
+marked.use({ renderer })
 
 export default function Preview({ markdown, setExpandedComponent, isExpanded, setCustomHeight }) {
   const toggleExpand = () => {
