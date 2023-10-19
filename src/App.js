@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { FaGithub } from 'react-icons/fa6'
 import Editor from './components/Editor'
 import Preview from './components/Preview'
 import './App.css'
@@ -72,6 +73,10 @@ export default function App() {
           setCustomHeight={setCustomHeight}
         />
       )}
+      <footer>
+        &copy; 2023 Melek Redwan
+        <a href='https://github.com/mamlaki/markdown-previewer' target='_blank' rel='noopener noreferrer'><FaGithub size={22} /></a>
+      </footer>
     </div>
   )
 }
