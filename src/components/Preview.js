@@ -11,7 +11,7 @@ export default function Preview({ markdown, setExpandedComponent, isExpanded, se
   }
 
   return (
-    <div className='preview-container' style={{ height: isExpanded ? '90vh' : 'auto'}}>
+    <div className='preview-container' style={{ height: isExpanded ? '100%' : 'auto'}}>
       <div className='preview-header'>
         <div>
           <FaFreeCodeCamp />
