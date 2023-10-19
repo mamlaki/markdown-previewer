@@ -2,6 +2,7 @@
   --background-blue: #87B5B5;
   --header-blue: #4AA3A3;
   --component-bg: #C0D8D8;
+  --button-hover: #56E2B1;
 }
 
 * {
@@ -60,6 +61,12 @@ body {
   display: flex;
   gap: 0.6rem;
   align-items: center;
+}
+
+.editor-header div:nth-child(2):hover,
+.preview-header div:nth-child(2):hover {
+  color: var(--button-hover);
+  cursor: pointer;
 }
 
 #preview {
