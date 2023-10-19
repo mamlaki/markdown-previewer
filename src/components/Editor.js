@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { FaFreeCodeCamp, FaExpand } from 'react-icons/fa6'
+import { FaFreeCodeCamp, FaExpand, FaDownLeftAndUpRightToCenter } from 'react-icons/fa6'
 
 export default function Editor({ markdown, setMarkdown, setExpandedComponent, isExpanded, anotherIsExpanded, customHeight, setCustomHeight }) {
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function Editor({ markdown, setMarkdown, setExpandedComponent, is
           Editor
         </div>
         <div onClick={toggleExpand}>
-          {isExpanded ? 'Minimize' : <FaExpand size={18} />}
+          {isExpanded ? <FaDownLeftAndUpRightToCenter size={18} /> : <FaExpand size={18} />}
         </div>
       </div>
       <textarea 

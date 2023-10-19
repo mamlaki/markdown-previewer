@@ -1,5 +1,5 @@
 import { marked } from 'marked'
-import { FaFreeCodeCamp, FaExpand } from 'react-icons/fa6'
+import { FaFreeCodeCamp, FaExpand, FaDownLeftAndUpRightToCenter } from 'react-icons/fa6'
 
 export default function Preview({ markdown, setExpandedComponent, isExpanded, setCustomHeight }) {
   const toggleExpand = () => {
@@ -18,7 +18,7 @@ export default function Preview({ markdown, setExpandedComponent, isExpanded, se
           Previewer
         </div>
         <div onClick={toggleExpand}>
-          {isExpanded ? 'Minimize' : <FaExpand size={18} /> }
+          {isExpanded ? <FaDownLeftAndUpRightToCenter size={18} /> : <FaExpand size={18} /> }
         </div>
       </div>
       <div id='preview' dangerouslySetInnerHTML={{ __html: marked(markdown)}}></div>
