@@ -49,7 +49,7 @@ export default function App() {
   `)
 
   return (
-    <div className='App'>
+    <div className='wrapper'>
       <Editor markdown={markdown} setMarkdown={setMarkdown} />
       <Preview markdown={markdown} />
     </div>
