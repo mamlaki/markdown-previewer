@@ -47,11 +47,31 @@ export default function App() {
   
   ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
   `)
+  const [expandedComponent, setExpandedComponent] = useState('')
+  const [customHeight, setCustomHeight] = useState(null)
 
   return (
     <div className='wrapper'>
-      <Editor markdown={markdown} setMarkdown={setMarkdown} />
-      <Preview markdown={markdown} />
+      {expandedComponent !== 'Preview' && (
+        <Editor 
+          markdown={markdown} 
+          setMarkdown={setMarkdown} 
+          setExpandedComponent={setExpandedComponent}
+          isExpanded={expandedComponent === 'Editor'}
+          anotherIsExpanded={expandedComponent === 'Preview'}
+          customHeight={customHeight}
+          setCustomHeight={setCustomHeight}
+        />
+      )}
+      {expandedComponent !== 'Editor' && (
+        <Preview 
+          markdown={markdown} 
+          setExpandedComponent={setExpandedComponent}
+          isExpanded={expandedComponent === 'Preview'}
+          customHeight={customHeight}
+          setCustomHeight={setCustomHeight}
+        />
+      )}
     </div>
   )
 }
