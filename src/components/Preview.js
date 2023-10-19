@@ -12,6 +12,10 @@ import 'prismjs/components/prism-python'
 
 import { FaFreeCodeCamp, FaExpand, FaDownLeftAndUpRightToCenter } from 'react-icons/fa6'
 
+marked.setOptions({
+  breaks: true
+})
+
 const renderer = new marked.Renderer()
 
 renderer.code = (code, language) => {

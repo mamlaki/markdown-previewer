@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { FaFreeCodeCamp, FaExpand, FaDownLeftAndUpRightToCenter } from 'react-icons/fa6'
 
 export default function Editor({ markdown, setMarkdown, setExpandedComponent, isExpanded, anotherIsExpanded, customHeight, setCustomHeight }) {
