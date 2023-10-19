@@ -164,3 +164,10 @@ footer a {
 footer a:hover {
   color: lightslategray;
 }
+
+@media screen and (max-width: 768px) {
+  #editor,
+  .preview-container {
+    width: 38rem;
+  }
+}
